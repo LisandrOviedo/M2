@@ -47,7 +47,6 @@ export default function Contact() {
   };
 
   const handleSubmit = (event) => {
-    const a = 1;
     if (Object.values(errors).length === 0) {
       alert("Datos completos");
       setInputs({
