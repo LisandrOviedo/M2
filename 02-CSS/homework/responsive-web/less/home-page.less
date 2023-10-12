@@ -1,4 +1,6 @@
-// Conteindo del Home
+// Contenido del Home
+@import "mixins";
+@import "variables";
 
 .home {
   .intro {
@@ -55,6 +57,16 @@
       }
 
       .btn {
+        .register-btn {
+          .boton-registrarse(@btn-bg-color; white);
+          border-radius: 5px;
+          width: auto;
+          height: 30px;
+        }
+        .register-btn:hover {
+          .boton-registrarse(white; @btn-bg-color);
+          cursor: pointer;
+        }
       }
     }
 
@@ -66,6 +78,98 @@
         width: 100%;
         height: auto;
         border-radius: 10px;
+      }
+    }
+  }
+}
+
+.titulo {
+  .flex-base();
+  h1 {
+    margin-top: 16px;
+    font-size: 4rem;
+  }
+}
+
+.intro {
+  div {
+    img {
+      border-radius: 16px;
+      width: 100%;
+    }
+  }
+}
+
+@media @phone {
+  .titulo {
+    h1 {
+      margin-top: 16px;
+      font-size: 3rem;
+    }
+  }
+
+  .home {
+    .music-images {
+      flex-direction: column;
+      align-items: center;
+      .tecnologia,
+      .ondas {
+        display: none;
+      }
+
+      .auricular {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+
+    .intro {
+      h2 {
+        font-size: 2.8rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .musica-nueva {
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .actual {
+      padding: 10px;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      .actual-img {
+        width: 100%;
+      }
+
+      .actual-text {
+        width: 100%;
+
+        p {
+          font-size: 1.5rem;
+        }
+
+        .btn {
+          .register-btn {
+            width: 100%;
+          }
+        }
       }
     }
   }
