@@ -13,7 +13,7 @@
   text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
-  color: rgb(26, 26, 130)
+  color: rgb(26, 26, 130);
 }
 
 .subtitle {
@@ -43,6 +43,7 @@
   margin: 5px;
   font-weight: 500;
   border-radius: 5%;
+  cursor: pointer;
 }
 .listItem:hover {
   background-color: #262623c9;
