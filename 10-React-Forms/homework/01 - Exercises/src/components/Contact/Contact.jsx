@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.modules.css";
-import { useState } from "react";
 
 // eslint-disable-next-line
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
@@ -41,7 +40,7 @@ export default function Contact() {
 
     setErrors(
       validate({
-        ...errors,
+        ...inputs,
         [event.target.name]: event.target.value,
       })
     );
@@ -62,8 +61,8 @@ export default function Contact() {
         message: "",
       });
     } else {
-      alert("Debe llenar todos los campos");
       event.preventDefault();
+      alert("Debe llenar todos los campos");
     }
   };
 
