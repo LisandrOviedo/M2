@@ -12,13 +12,19 @@ const incremento = () => {
 };
 
 const decremento = () => {
-  return { type: DECREMENTO };
+  return {
+    type: DECREMENTO,
+  };
 };
 const impar = () => {
-  return { type: IMPAR };
+  return {
+    type: IMPAR,
+  };
 };
 const asincrono = () => {
-  return { type: ASINCRONO };
+  return {
+    type: ASINCRONO,
+  };
 };
 
 module.exports = {

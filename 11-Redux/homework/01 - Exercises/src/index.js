@@ -39,9 +39,8 @@ document
     () => store.getState().contador % 2 !== 0 && store.dispatch(impar())
   );
 
-// document
-//   .getElementById("incrementoAsync")
-//   .addEventListener(
-//     "click",
-//     () => store.getState().contador % 2 !== 0 && store.dispatch(impar())
-//   );
+document.getElementById("incrementoAsync").addEventListener("click", () =>
+  setTimeout(() => {
+    store.dispatch(asincrono());
+  }, 1000)
+);
