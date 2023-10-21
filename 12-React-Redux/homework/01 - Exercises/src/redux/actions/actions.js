@@ -17,10 +17,11 @@ export const deleteProduct = (id) => {
 
 export const getStoreName = () => {
   return function (dispatch) {
-    axios
-      .get("http://localhost:3001/store")
-      .then(({ data }) =>
-        dispatch({ type: GET_STORE_NAME, payload: data.name })
-      );
+    return axios.get("http://localhost:3001/store").then(({ data }) =>
+      dispatch({
+        type: GET_STORE_NAME,
+        payload: data.name,
+      })
+    );
   };
 };
