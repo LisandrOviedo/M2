@@ -1,20 +1,20 @@
-import { connect } from 'react-redux';
-import React from 'react';
-import './products.css';
-// import Card from '../Card/Card'
+import { connect } from "react-redux";
+import React from "react";
+import "./products.css";
+import Card from "../Card/Card";
 
 export function Products() {
-   return (
-      <>
-         <div className='productsBg'>
-            <h1 className='productsTl'></h1>
+  return (
+    <>
+      <div className="productsBg">
+        <h1 className="productsTl"></h1>
 
-            <div className='productsList'>
-               {/* ¡Renderiza aquí todas tus cards! */}
-            </div>
-         </div>
-      </>
-   );
+        <div className="productsList">
+          {/* ¡Renderiza aquí todas tus cards! */}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export function mapStateToProps() {}
