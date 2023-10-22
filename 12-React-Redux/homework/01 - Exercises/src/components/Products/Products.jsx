@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import "./products.css";
 import Card from "../Card/Card";
-import { useEffect } from "react";
+import { getStoreName } from "../../redux/actions/actions";
 
 export function Products({ list, storeName, getStoreName }) {
   React.useEffect(() => {
@@ -12,10 +12,19 @@ export function Products({ list, storeName, getStoreName }) {
   return (
     <>
       <div className="productsBg">
-        <h1 className="productsTl"></h1>
+        <h1 className="productsTl">{storeName}</h1>
 
         <div className="productsList">
-          {/* ¡Renderiza aquí todas tus cards! */}
+          {list.map(function (listItem) {
+            return (
+              <Card
+                name={listItem.name}
+                price={listItem.price}
+                id={listItem.id}
+                key={listItem.id}
+              />
+            );
+          })}
         </div>
       </div>
     </>
@@ -32,7 +41,7 @@ export function mapStateToProps(state) {
 export function mapDispatchToProps(dispatch) {
   return {
     getStoreName: () => {
-      dispatch(getStoreName);
+      dispatch(getStoreName());
     },
   };
 }
