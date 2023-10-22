@@ -2,8 +2,13 @@ import { connect } from "react-redux";
 import React from "react";
 import "./products.css";
 import Card from "../Card/Card";
+import { useEffect } from "react";
 
-export function Products() {
+export function Products({ list, storeName, getStoreName }) {
+  React.useEffect(() => {
+    getStoreName();
+  }, []);
+
   return (
     <>
       <div className="productsBg">
@@ -17,8 +22,19 @@ export function Products() {
   );
 }
 
-export function mapStateToProps() {}
+export function mapStateToProps(state) {
+  return {
+    list: state.list,
+    storeName: state.storeName,
+  };
+}
 
-export function mapDispatchToProps() {}
+export function mapDispatchToProps(dispatch) {
+  return {
+    getStoreName: () => {
+      dispatch(getStoreName);
+    },
+  };
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
